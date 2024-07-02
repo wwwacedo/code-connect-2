@@ -1,0 +1,1 @@
+# [Code Connect 2](https://cursos.alura.com.br/course/next-js-construa-aplicacoes-postgres-prisma/task)
