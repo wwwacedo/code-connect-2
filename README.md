@@ -87,12 +87,12 @@
 - Antes:
 	```javascript
 	"scripts": {
-			"build": "next build",
-		},
+	  "build": "next build",
+	},
 	```
 - Depois:
 	```javascript
 	"scripts": {
-			"build": "prisma migrate dev && prisma generate && prisma db seed && next build",
-		},
+	  "build": "prisma migrate dev && prisma generate && prisma db seed && next build",
+	},
 	```
