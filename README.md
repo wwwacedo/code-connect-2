@@ -45,3 +45,54 @@
 	```bash
 	npx prisma db seed
 	```
+
+---
+
+## [Deploy na Vercel](https://vercel.com/docs/storage/vercel-postgres/using-an-orm#prisma)
+
+8. Usar variáveis de ambiente no `schema.prisma`:
+- Antes:
+
+	```javascript
+	datasource db {
+		provider = "postgresql"
+		url      = env("DATABASE_URL")
+	}
+	```
+
+- Depois:
+	```javascript
+	datasource db {
+		provider = "postgresql"
+		// Uses connection pooling
+		url = env("POSTGRES_PRISMA_URL")
+		// Uses direct connection, ⚠️ make sure to keep this to `POSTGRES_URL_NON_POOLING`
+		// or you'll have dangling databases from migrations
+		directUrl = env("POSTGRES_URL_NON_POOLING")
+	}
+	```
+
+9. Alterar o `.env`:
+- Antes:
+	```javascript
+	DATABASE_URL=
+	```
+- Depois:
+	```javascript
+	POSTGRES_PRISMA_URL=
+	POSTGRES_URL_NON_POOLING=
+	```
+
+10. Atualizar o `script build` no `package.json`:
+- Antes:
+	```javascript
+	"scripts": {
+			"build": "next build",
+		},
+	```
+- Depois:
+	```javascript
+	"scripts": {
+			"build": "prisma migrate dev && prisma generate && prisma db seed && next build",
+		},
+	```
