@@ -1,4 +1,5 @@
-# [Code Connect 2](https://cursos.alura.com.br/course/next-js-construa-aplicacoes-postgres-prisma/task)
+# Code Connect
+## [Postgres e Prisma](https://cursos.alura.com.br/course/next-js-construa-aplicacoes-postgres-prisma)
 
 1. Para levantar o Postgres:
 	```bash
@@ -48,7 +49,7 @@
 
 ---
 
-## [Deploy na Vercel](https://vercel.com/docs/storage/vercel-postgres/using-an-orm#prisma)
+### [Deploy na Vercel](https://vercel.com/docs/storage/vercel-postgres/using-an-orm#prisma)
 
 8. Usar variáveis de ambiente no `schema.prisma`:
 - Antes:
@@ -96,3 +97,7 @@
 			"build": "prisma migrate dev && prisma generate && prisma db seed && next build",
 		},
 	```
+---
+
+## [Server Actions](https://cursos.alura.com.br/course/next-js-construindo-server-actions)
+
