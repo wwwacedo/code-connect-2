@@ -31,7 +31,8 @@ async function getAllPosts(page, searchTerm) {
 			where,
 			orderBy: { id: 'asc' },
 			include: {
-				author: true
+				author: true,
+				comments: true, 
 			}
 		})
 		return { data: posts, prev, next }
